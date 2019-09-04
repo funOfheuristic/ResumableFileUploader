@@ -1,0 +1,28 @@
+
+  <mat-card style="width: 50vw; margin: auto">
+    <mat-card-header>
+      <mat-card-title>File Upload Socket</mat-card-title>
+    </mat-card-header>
+    <button mat-raised-button (click)="fileSelect.click()">Select File</button><br><br>
+    <h4 *ngIf="name.length > 0">Selected File: {{name}}</h4>
+      <input type="file" hidden #fileSelect name="largeFile" (change)="onFileSelect($event)" />
+  
+      <button mat-raised-button (click)="upload()">Upload</button>
+    <br><br>
+      <mat-progress-spinner  *ngIf="uploadPercent > 0"
+        class="example-margin"
+        [color]="color"
+        [mode]="mode"
+        [value]="uploadPercent">
+    </mat-progress-spinner>
+  
+    <mat-card-content>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="goToLink('https://youtu.be/R70yli6bSy4')">Video Link</button>
+      <button mat-button (click)="goToLink('https://www.youtube.com/funofheuristic')">Channel</button>
+    </mat-card-actions>
+  </mat-card>
+  
+  
