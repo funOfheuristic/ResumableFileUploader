@@ -122,7 +122,7 @@ app.get('/status', (req, res) =>{
         {
           console.log(`fileSize is ${fileSize} and already uploaded file size ${stats.size}`);
           if(fileSize == stats.size){
-            res.send({'status': 'file is present'})
+            res.send({'status': 'file is present', "uploaded" : stats.size})
             return;
           }
           if(!uploads[fileId])

@@ -67,7 +67,7 @@ export class AppComponent implements OnInit {
           .subscribe(
             (res: any) => {
               if(res.type === HttpEventType.UploadProgress){
-                this.uploadPercent = Math.round(100* res.loaded/res.total);
+                this.uploadPercent = Math.round(100* uploadedBytes/this.selectedFile.size);
                 console.log(this.uploadPercent);
                 if(this.uploadPercent >= 100){
                   this.name = "";
